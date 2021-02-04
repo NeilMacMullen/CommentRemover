@@ -20,6 +20,7 @@ namespace CommentRemover
             await RemoveAllExceptXmlDocComments.InitializeAsync(this);
             await RemoveTasksCommand.InitializeAsync(this);
             await RemoveAllExceptTaskComments.InitializeAsync(this);
+            await RemoveEmptyXmlReturnsCommand.InitializeAsync(this);
         }
     }
 }

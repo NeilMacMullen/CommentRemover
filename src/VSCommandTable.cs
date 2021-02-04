@@ -35,5 +35,6 @@ namespace CommentRemover
         public const int RemoveAllExceptXmlDocComments = 0x0400;
         public const int RemoveTaskComments = 0x0500;
         public const int RemoveAllExceptTaskComments = 0x0600;
+        public const int RemoveEmptyXmlReturns = 0x0700;
     }
 }

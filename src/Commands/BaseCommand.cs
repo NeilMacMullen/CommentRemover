@@ -76,6 +76,24 @@ namespace CommentRemover
                    || Regex.IsMatch(text, @"<!--(\s+)?-->"));
         }
 
+        protected static bool IsEmptyXmlReturns(ITextSnapshotLine line)
+        {
+            var text = line.GetText().Trim();
+            var contentType = line.Snapshot.TextBuffer.ContentType;
+
+            if ((contentType.IsOfType("CSharp") || contentType.IsOfType("FSharp")) && text.StartsWith("///"))
+            {
+                return Regex.IsMatch(text, @"(\s+)?/// <returns>(\s+)?</returns>(\s+)?");
+            }
+
+            if (contentType.IsOfType("Basic") && text.StartsWith("'''"))
+            {
+                return Regex.IsMatch(text, @"(\s+)?''' <returns>(\s+)?</returns>(\s+)?");
+            }
+
+            return false;
+        }
+
         protected static bool IsXmlDocComment(ITextSnapshotLine line)
         {
             string text = line.GetText().Trim();

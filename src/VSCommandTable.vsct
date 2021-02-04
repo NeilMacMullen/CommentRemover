@@ -74,6 +74,17 @@
         </Strings>
       </Button>
 
+      <Button guid="guidPackageCmdSet" id="RemoveEmptyXmlRemarks" priority="0x0500" type="Button">
+        <Parent guid="guidPackageCmdSet" id="XmlDocGroup" />
+        <Icon guid="ImageCatalogGuid" id="XMLElement" />
+        <CommandFlag>IconIsMoniker</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <LocCanonicalName>Remove Empty XML Remarks</LocCanonicalName>
+          <ButtonText>Remove Empty XML Remarks</ButtonText>
+        </Strings>
+      </Button>
+
       <Button guid="guidPackageCmdSet" id="RemoveRegions" priority="0x0400" type="Button">
         <Parent guid="guidPackageCmdSet" id="RegionGroup" />
         <Icon guid="ImageCatalogGuid" id="HideCommentGroup" />
@@ -123,6 +134,9 @@
     <VisibilityItem guid="guidPackageCmdSet" id="RemoveEmptyXmlReturns" context="GUID_TextEditorFactory" />
     <VisibilityItem guid="guidPackageCmdSet" id="RemoveEmptyXmlReturns" context="guidXmlUiCmds" />
 
+    <VisibilityItem guid="guidPackageCmdSet" id="RemoveEmptyXmlRemarks" context="GUID_TextEditorFactory" />
+    <VisibilityItem guid="guidPackageCmdSet" id="RemoveEmptyXmlRemarks" context="guidXmlUiCmds" />
+
     <VisibilityItem guid="guidPackageCmdSet" id="RemoveTaskComments" context="GUID_TextEditorFactory" />
     <VisibilityItem guid="guidPackageCmdSet" id="RemoveTaskComments" context="guidXmlUiCmds" />
 
@@ -156,6 +170,7 @@
       <IDSymbol name="RemoveXmlDocComments" value="0x0300" />
       <IDSymbol name="RemoveAllExceptXmlDocComments" value="0x0400" />
       <IDSymbol name="RemoveEmptyXmlReturns" value="0x0700" />
+      <IDSymbol name="RemoveEmptyXmlRemarks" value="0x0800" />
       <IDSymbol name="RemoveTaskComments" value="0x0500" />
       <IDSymbol name="RemoveAllExceptTaskComments" value="0x0600" />
     </GuidSymbol>

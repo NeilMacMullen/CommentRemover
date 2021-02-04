@@ -21,6 +21,7 @@ namespace CommentRemover
             await RemoveTasksCommand.InitializeAsync(this);
             await RemoveAllExceptTaskComments.InitializeAsync(this);
             await RemoveEmptyXmlReturnsCommand.InitializeAsync(this);
+            await RemoveEmptyXmlRemarksCommand.InitializeAsync(this);
         }
     }
 }

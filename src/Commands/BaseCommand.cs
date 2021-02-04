@@ -94,6 +94,24 @@ namespace CommentRemover
             return false;
         }
 
+        protected static bool IsEmptyXmlRemarks(ITextSnapshotLine line)
+        {
+            var text = line.GetText().Trim();
+            var contentType = line.Snapshot.TextBuffer.ContentType;
+
+            if ((contentType.IsOfType("CSharp") || contentType.IsOfType("FSharp")) && text.StartsWith("///"))
+            {
+                return Regex.IsMatch(text, @"(\s+)?/// <remarks>(\s+)?</remarks>(\s+)?");
+            }
+
+            if (contentType.IsOfType("Basic") && text.StartsWith("'''"))
+            {
+                return Regex.IsMatch(text, @"(\s+)?''' <remarks>(\s+)?</remarks>(\s+)?");
+            }
+
+            return false;
+        }
+
         protected static bool IsXmlDocComment(ITextSnapshotLine line)
         {
             string text = line.GetText().Trim();
